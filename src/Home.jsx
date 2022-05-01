@@ -20,13 +20,17 @@ function App() {
 		<div className='App'>
 			{error && <span>Something went wrong</span>}
 			{loading && <p>Loading....</p>}
+
+			<Link to='/post/create'>New Post</Link>
 			<ul>
 				{!loading &&
 					data.posts.data.map(post => {
 						return (
-							<Link key={post.id} to={`/posts/${post.id}`}>
-								{post.title}
-							</Link>
+							<li>
+								<Link key={post.id} to={`/posts/${post.id}`}>
+									{post.title}
+								</Link>
+							</li>
 						);
 					})}
 			</ul>
